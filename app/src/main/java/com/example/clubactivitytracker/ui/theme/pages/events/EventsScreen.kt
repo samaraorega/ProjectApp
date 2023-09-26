@@ -25,12 +25,14 @@ fun EventsScreen(navController: NavController) {
     ) {
         Text(
             text = "This month's lined-up events",
-            color = Color.Black,
+            color = Color.White,
             fontSize = 30.sp,
             fontFamily = FontFamily.Cursive,
             textDecoration = TextDecoration.Underline,
             fontWeight = FontWeight.Bold
         )
+        Text(text = "No-lined up events",
+            color = Color.White)
     }
 }
 

@@ -51,7 +51,7 @@ fun HomeScreen(navController: NavHostController) {
                 Button(onClick = {
                     navController.navigate(ROUTE_ACCOUNTS)
                 }) {
-                    Text(text = "Financial Records")}
+                    Text(text = "Make Contribution")}
 
 
 

@@ -48,16 +48,13 @@ fun LoginScreen(navController: NavHostController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
-        Icon(painter = painterResource(id = R.drawable.footlogo),
-            contentDescription = null,
-            Modifier.size(80.dp),
-            tint = Color.White)
+
         var context = LocalContext.current
         Text(
             text = "Login here!",
-            color = Color.Black,
+            color = Color.White,
             fontSize = 30.sp,
-            fontFamily = FontFamily.Cursive,
+            fontFamily = FontFamily.SansSerif,
             textDecoration = TextDecoration.Underline,
             fontWeight = FontWeight.Bold)
 
@@ -70,7 +67,10 @@ fun LoginScreen(navController: NavHostController) {
             onValueChange = {name = it},
             label = {Text(text = "Name")},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-            icon = Icons.Default.Person
+            leadingIcon = {
+                Icon(Icons.Default.Person,contentDescription = "Name" )
+            }
+
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -80,18 +80,24 @@ fun LoginScreen(navController: NavHostController) {
             onValueChange = {email = it},
             label = {Text(text = "Email")},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-            icon = Icons.Default.Email
+            leadingIcon = {
+                Icon(Icons.Default.Email,contentDescription = "Email" )
+            }
+
         )
 
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
             value = password,
+            onValueChange = {password = it} ,
             label = {Text(text = "Password")},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            icon = Icons.Default.Lock
+            leadingIcon = {
+                Icon(Icons.Default.Lock,contentDescription = "Password" )
+            }
         )
-        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
+
 
         Spacer(modifier = Modifier.height(20.dp))
         
@@ -115,6 +121,10 @@ fun LoginScreen(navController: NavHostController) {
 fun LoginScreenPreview() {
     ClubActivityTrackerTheme {
         LoginScreen(rememberNavController())
+    ClubActivityTrackerTheme {
+        LoginScreen(rememberNavController())
+    }
+
     }
 
 }

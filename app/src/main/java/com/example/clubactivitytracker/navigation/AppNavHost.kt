@@ -12,13 +12,14 @@ import com.example.clubactivitytracker.ui.theme.pages.events.EventsScreen
 import com.example.clubactivitytracker.ui.theme.pages.firstaid.FirstAidScreen
 import com.example.clubactivitytracker.ui.theme.pages.home.HomeScreen
 import com.example.clubactivitytracker.ui.theme.pages.login.LoginScreen
+import com.example.clubactivitytracker.ui.theme.pages.signup.SignupScreen
 import com.example.clubactivitytracker.ui.theme.pages.training.TrainingScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUTE_LOGIN){
+    startDestination: String = ROUTE_SIGNUP){
        NavHost(navController = navController,
     modifier = modifier, startDestination = startDestination){
 
@@ -47,7 +48,7 @@ fun AppNavHost(
            }
 
            composable(ROUTE_SIGNUP){
-               TrainingScreen(navController)
+               SignupScreen(navController)
            }
 
        }
